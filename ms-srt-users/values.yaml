@@ -15,7 +15,6 @@ MYSQL_USER: srt_client
 MYSQL_DATABASE: src_client_db
 MYSQLSecretName: mysql
 MYSQLSecretKey: password
-NODE_DEV: dev
 
 imagePullSecrets: []
 nameOverride: ""
