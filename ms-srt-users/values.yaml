@@ -10,12 +10,13 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v1.1.5"
 
-MYSQL_HOST: rds.staging.msur-vpc.com
+MYSQL_HOST: rds.staging.msur-vpc.comcd
 MYSQL_USER: srt_client
 MYSQL_DATABASE: srt_client
 MYSQLSecretName: mysql
 MYSQLSecretKey: password
-              
+NODE_DEV: dev
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
