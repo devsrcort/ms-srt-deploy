@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "{{ include "ms-srt-wallet.fullname" . }}-test-connection"
+  name: "{{ include "ms-srt-wallet-client.fullname" . }}-test-connection"
   labels:
-    {{- include "ms-srt-wallet.labels" . | nindent 4 }}
+    {{- include "ms-srt-wallet-client.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test
 spec:
@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "ms-srt-wallet.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "ms-srt-wallet-client.fullname" . }}:{{ .Values.service.port }}']
   restartPolicy: Never
