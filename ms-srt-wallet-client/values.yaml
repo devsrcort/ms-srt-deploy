@@ -52,7 +52,7 @@ ingress:
     kubernetes.io/ingress.class: traefik
   hosts:
     - host: srt-wallet.io
-      paths: ["/home"]
+      paths: ["/"]
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
