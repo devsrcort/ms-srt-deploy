@@ -50,13 +50,19 @@ spec:
               containerPort: 5502
               protocol: TCP
           livenessProbe:
-            httpGet:
-              path: /ping
-              port: http
+            exec:
+              command:
+                - cat
+                - /tmp/healthy
+            initialDelaySeconds: 10
+            periodSeconds: 5
           readinessProbe:
-            httpGet:
-              path: /ping
-              port: http
+            exec:
+              command:
+                - cat
+                - /tmp/healthy
+            initialDelaySeconds: 10
+            periodSeconds: 5
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
