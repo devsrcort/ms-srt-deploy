@@ -8,7 +8,7 @@ image:
   repository: devsrcorp/ms-srt-wallet-client
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.0.54"
+  tag: "v1.0.55"
 
 MYSQL_HOST: rds.staging.msur-vpc.com
 MYSQL_USER: srt_client
@@ -44,8 +44,14 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 443
-
+  ports:
+    - name: http
+      port: 80
+      targetPort: 6001
+    - name: https
+      port: 443
+      targetPort: 6001
+      
 ingress:
   enabled: true
   annotations: 
