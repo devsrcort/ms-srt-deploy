@@ -7,9 +7,14 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
+    - port: 80
       targetPort: http
       protocol: TCP
       name: http
+    - port: 443
+      targetPort: https
+      protocol: TCP
+      name: https
+
   selector:
     {{- include "ms-srt-wallet-client.selectorLabels" . | nindent 4 }}

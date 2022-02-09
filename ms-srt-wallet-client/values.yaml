@@ -44,14 +44,8 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  ports:
-    - name: http
-      port: 80
-      targetPort: 6001
-    - name: https
-      port: 443
-      targetPort: 6001
-      
+  port: 80
+
 ingress:
   enabled: true
   annotations: 
