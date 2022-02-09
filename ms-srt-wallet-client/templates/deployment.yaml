@@ -49,14 +49,17 @@ spec:
             - name: http
               containerPort: 6001
               protocol: TCP
+            - name: https
+              containerPort: 6001
+              protocol: TCP
           livenessProbe:
             httpGet:
               path: /
-              port: http
+              port: https
           readinessProbe:
             httpGet:
               path: /
-              port: http
+              port: https
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
