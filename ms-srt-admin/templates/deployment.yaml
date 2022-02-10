@@ -49,9 +49,6 @@ spec:
             - name: http
               containerPort: 5005
               protocol: TCP
-            - name: https
-              containerPort: 5005
-              protocol: TCP
           livenessProbe:
             httpGet:
               path: /
