@@ -16,8 +16,6 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
-  entryPoints:
-    - websecure
   {{- if .Values.ingress.tls }}
   tls:
     {{- range .Values.ingress.tls }}
@@ -28,12 +26,16 @@ spec:
       secretName: {{ .secretName }}
     {{- end }}
   {{- end }}
-  routes:
+  rules:
     {{- range .Values.ingress.hosts }}
-    - match: {{ .host | quote }}
-      kind: Rule
-      services:
-        - name: {{ $fullNmae }}
-          port : {{ $svcPort }}
+    - host: {{ .host | quote }}
+      https:
+        paths:
+          {{- range .paths }}
+          - path: {{ . }}
+            backend:
+              serviceName: {{ $fullName }}
+              servicePort: {{ $svcPort }}
+          {{- end }}
     {{- end }}
 {{- end }}
