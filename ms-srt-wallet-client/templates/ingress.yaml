@@ -6,7 +6,7 @@ apiVersion: networking.k8s.io/v1beta1
 {{- else -}}
 apiVersion: extensions/v1beta1
 {{- end }}
-kind: Ingress
+kind: IngressRoute
 metadata:
   name: {{ $fullName }}
   labels:
@@ -28,16 +28,13 @@ spec:
       secretName: {{ .secretName }}
     {{- end }}
   {{- end }}
-  rules:
+  routes:
     {{- range .Values.ingress.hosts }}
-    - host: {{ .host | quote }}
-      http:
-        paths:
-          {{- range .paths }}
-          - path: {{ . }}
-            backend:
-              serviceName: {{ $fullName }}
-              servicePort: {{ $svcPort }}
-          {{- end }}
+    - match: {{ .host | quote }}
+      kind: Rule
+      services:
+        serviceName: {{ $fullName }}
+        servicePort: {{ $svcPort }}
     {{- end }}
+  {{- end }}
 {{- end }}
