@@ -44,7 +44,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
+  port: 443
 
 ingress:
   enabled: true
@@ -54,7 +54,7 @@ ingress:
   hosts:
     - host: srt-wallet.io
       paths: ["/"]
-  tls: 
+  tls:  
     - secretName: chart-srt-wallet-tls
       hosts:
        - srt-wallet.io
