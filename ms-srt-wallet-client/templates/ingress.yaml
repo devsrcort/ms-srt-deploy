@@ -16,6 +16,8 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
+  entryPoints:
+    - websecure
   {{- if .Values.ingress.tls }}
   tls:
     {{- range .Values.ingress.tls }}
