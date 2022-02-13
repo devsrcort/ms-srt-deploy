@@ -50,13 +50,14 @@ ingress:
   enabled: true
   annotations: 
     kubernetes.io/ingress.class: traefik
+    ingress.kubernetes.io/ssl-redirect: "true"
   hosts:
     - host: srt-wallet.io
       paths: ["/"]
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+  tls: 
+    - secretName: chart-srt-wallet-tls
+      hosts:
+       - srt-wallet.io
 
 autoscaling:
   enabled: false
