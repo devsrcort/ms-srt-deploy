@@ -8,13 +8,15 @@ image:
   repository: devsrcorp/ms-srt-users
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.1.47"
+  tag: "v1.1.48"
 
 MYSQL_HOST: rds.staging.msur-vpc.com
 MYSQL_USER: srt_client
 MYSQL_DATABASE: srt_client_db
 MYSQLSecretName: mysql
 MYSQLSecretKey: password
+AUTH_PATH: https://srcorp-auth-backend.s3.ap-northeast-2.amazonaws.com/srt-client-wallet-firebase-adminsdk-prpmd-7385e92e8b.json
+
 
 imagePullSecrets: []
 nameOverride: ""
