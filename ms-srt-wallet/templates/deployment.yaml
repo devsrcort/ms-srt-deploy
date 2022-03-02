@@ -49,6 +49,9 @@ spec:
             - name: http
               containerPort: 5502
               protocol: TCP
+            - name: socket
+              containerPort: 5702
+              protocol: TCP
           livenessProbe:
             httpGet:
               path: /ping

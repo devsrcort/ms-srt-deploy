@@ -11,5 +11,9 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
+    - port: {{ .Values.service.socket_port }}
+      targetPort: socket
+      protocol: TCP
+      name: socket
   selector:
     {{- include "ms-srt-wallet.selectorLabels" . | nindent 4 }}
