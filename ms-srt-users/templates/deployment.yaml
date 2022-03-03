@@ -56,7 +56,9 @@ spec:
             - name: FIREBASE_MSG_SENDER_ID
               value: {{ .Values.FIREBASE_MSG_SENDER_ID | quote }}  
             - name: FIREBASE_APP_ID
-              value: {{ .Values.FIREBASE_APP_ID | quote }}  
+              value: {{ .Values.FIREBASE_APP_ID | quote }}
+            - name: FIREBASE_ADMIN_FILE_PATH
+              value: {{ .Values.FIREBASE_ADMIN_FILE_PATH | quote }}  
           ports:
             - name: http
               containerPort: 5501
