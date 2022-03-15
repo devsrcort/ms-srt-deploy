@@ -10,7 +10,7 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v1.0.41"
 
-MYSQL_HOST: rds.sandbox.msur-vpc.com
+MYSQL_HOST: rds.sandbox.srcorp-dev-vpc.com
 MYSQL_USER: srt_client
 MYSQL_DATABASE: srt_client_db
 MYSQLSecretName: mysql
