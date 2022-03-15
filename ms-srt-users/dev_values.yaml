@@ -1,0 +1,80 @@
+# Default values for ms-srt-users.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: devsrcorp/ms-srt-users
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "v1.1.67"
+
+MYSQL_HOST: rds.sandbox.msur-vpc.com
+MYSQL_USER: srt_client
+MYSQL_DATABASE: srt_client_db
+MYSQLSecretName: mysql
+MYSQLSecretKey: password
+
+FIREBASE_API_KEY: AIzaSyBbWx630F8Lb-Vsov_jnqHj1pn5pTYL0m8
+FIREBASE_AUTH_DOMAIN: srt-client-wallet.firebaseapp.com
+FIREBASE_PROJECT_ID: srt-client-wallet
+FIREBASE_STORAGEBUCKET: srt-client-wallet.appspot.com
+FIREBASE_MSG_SENDER_ID: 288293074890
+FIREBASE_APP_ID: 1:288293074890:web:bcb29c73e998d5d97f0133
+FIREBASE_ADMIN_FILE_PATH: ../../../config/srt-client-wallet-firebase-adminsdk-prpmd-e4a4eeb8c7.json
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  annotations: 
+    kubernetes.io/ingress.class: traefik
+  hosts:
+    - host: dev.app.srt-wallet.io
+      paths: ["/users"]
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
