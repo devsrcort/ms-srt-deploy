@@ -5,24 +5,16 @@
 replicaCount: 1
 
 image:
-  repository: devsrcorp/ms-srt-users
+  repository: devsrcorp/ms-dev-srt-users
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.1.67"
+  tag: "latest"
 
 MYSQL_HOST: rds.sandbox.srcorp-dev-vpc.com
 MYSQL_USER: srt_client
 MYSQL_DATABASE: srt_client_db
 MYSQLSecretName: mysql
 MYSQLSecretKey: password
-
-FIREBASE_API_KEY: AIzaSyBbWx630F8Lb-Vsov_jnqHj1pn5pTYL0m8
-FIREBASE_AUTH_DOMAIN: srt-client-wallet.firebaseapp.com
-FIREBASE_PROJECT_ID: srt-client-wallet
-FIREBASE_STORAGEBUCKET: srt-client-wallet.appspot.com
-FIREBASE_MSG_SENDER_ID: 288293074890
-FIREBASE_APP_ID: 1:288293074890:web:bcb29c73e998d5d97f0133
-FIREBASE_ADMIN_FILE_PATH: ../../../config/srt-client-wallet-firebase-adminsdk-prpmd-e4a4eeb8c7.json
 
 imagePullSecrets: []
 nameOverride: ""
