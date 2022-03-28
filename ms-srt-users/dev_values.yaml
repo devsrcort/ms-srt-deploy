@@ -16,6 +16,9 @@ MYSQL_DATABASE: srt_client_db
 MYSQLSecretName: mysql
 MYSQLSecretKey: password
 
+JWTSecretName: jwtKey
+JWTSecrectKey: jwtKeyValue
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""

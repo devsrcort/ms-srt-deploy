@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: devsrcorp/ms-srt-wallet
+  repository: devsrcorp/ms-dev-srt-wallet
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.0.41"
+  tag: "latest"
 
 MYSQL_HOST: rds.sandbox.srcorp-dev-vpc.com
 MYSQL_USER: srt_client
