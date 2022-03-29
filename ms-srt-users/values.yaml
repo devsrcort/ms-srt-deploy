@@ -18,6 +18,10 @@ MYSQLSecretKey: password
 
 JWTSecretName: jwtkey
 JWTSecrectKey: jwtkeyvalue
+COOKIESecretName: cookiekey
+COOKIESecretKey: cookiekeyvalue
+
+NodeEnvValue: production
 
 imagePullSecrets: []
 nameOverride: ""

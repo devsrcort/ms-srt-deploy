@@ -45,11 +45,22 @@ spec:
                   key: {{ .Values.MYSQLSecretKey | quote }}
             - name: MYSQL_DATABASE
               value: {{ .Values.MYSQL_DATABASE | quote }}
+
+            - name : COOKIE_SECRET
+              valueFrom:
+                secretKeyRef: 
+                  name: {{ .Values.COOKIESecretName | quote }}
+                  key: {{ .Values.COOKIESecretKey | quote }}
+
+            - name: NODE_ENV
+              value: {{ .Values.NodeEnvValue | quote }}
+
             - name : JWT_SECRET
               valueFrom:
                 secretKeyRef: 
                   name: {{ .Values.JWTSecretName | quote }}
                   key: {{ .Values.JWTSecrectKey | quote }}
+
           ports:
             - name: http
               containerPort: 5501
