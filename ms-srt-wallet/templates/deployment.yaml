@@ -45,6 +45,21 @@ spec:
                   key: {{ .Values.MYSQLSecretKey | quote }}
             - name: MYSQL_DATABASE
               value: {{ .Values.MYSQL_DATABASE | quote }}
+
+            - name: NODE_ENV
+              value: {{ .Values.NodeEnvValue | quote }}
+
+            - name : ETHAPIKEY
+              valueFrom:
+                secretKeyRef: 
+                  name: {{ .Values.ETHAPIKEYName | quote }}
+                  key: {{ .Values.ETHAPIKEYValue | quote }}
+
+            - name : ALCHEMY_APIKEY
+              valueFrom:
+                secretKeyRef: 
+                  name: {{ .Values.ALCHEMY_APIKEYName | quote }}
+                  key: {{ .Values.ALCHEMY_APIKEYSValue | quote }}
           ports:
             - name: http
               containerPort: 5502

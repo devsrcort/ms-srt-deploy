@@ -15,7 +15,15 @@ MYSQL_USER: srt_client
 MYSQL_DATABASE: srt_client_db
 MYSQLSecretName: mysql
 MYSQLSecretKey: password
-              
+        
+ALCHEMY_APIKEYName: alchemykeyname
+ALCHEMY_APIKEYSValue: alchemykeyvalue
+
+ETHAPIKEYName: ethkeyname
+ETHAPIKEYValue: ethkeyvalue
+  
+NodeEnvValue: production
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""

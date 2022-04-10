@@ -5,17 +5,25 @@
 replicaCount: 1
 
 image:
-  repository: devsrcorp/ms-dev-srt-wallet
+  repository: devsrcorp/ms-srt-wallet
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: "sha-dbbe1c1"
 
 MYSQL_HOST: rds.sandbox.srcorp-dev-vpc.com
 MYSQL_USER: srt_client
 MYSQL_DATABASE: srt_client_db
 MYSQLSecretName: mysql
 MYSQLSecretKey: password
-              
+
+ALCHEMY_APIKEYName: alchemykeyname
+ALCHEMY_APIKEYSValue: alchemykeyvalue
+
+ETHAPIKEYName: ethkeyname
+ETHAPIKEYValue: ethkeyvalue
+
+NodeEnvValue: dev
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
