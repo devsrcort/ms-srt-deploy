@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: devsrcorp/ms-dev-srt-wallet-client
+  repository: devsrcorp/ms-srt-wallet-client
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "sha-d6bace9"
