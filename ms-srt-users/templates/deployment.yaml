@@ -60,7 +60,18 @@ spec:
                 secretKeyRef: 
                   name: {{ .Values.JWTSecretName | quote }}
                   key: {{ .Values.JWTSecrectKey | quote }}
-
+          
+            - name : AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef: 
+                  name: {{ .Values.AWSAccessKeyName | quote }}
+                  key: {{ .Values.AWSAccessKey | quote }}
+            
+            - name : AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef: 
+                  name: {{ .Values.AWSSecretKeyName | quote }}
+                  key: {{ .Values.AWSSecretKey | quote }}
           ports:
             - name: http
               containerPort: 5501

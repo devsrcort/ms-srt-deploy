@@ -21,6 +21,12 @@ JWTSecrectKey: jwtkeyvalue
 COOKIESecretName: cookiekey
 COOKIESecretKey: cookiekeyvalue
 
+AWSAccessKeyName : awsaccesskey
+AWSAccessKey : awsaccesskeyvalue
+
+AWSSecretKeyName : awssecretkey
+AWSSecretKey : awssecrectkeyvalue
+
 NodeEnvValue: dev
 
 imagePullSecrets: []
