@@ -49,7 +49,7 @@ spec:
             - name: NODE_ENV
               value: {{ .Values.NodeEnvValue | quote }}
 
-            - name : ETHAPIKEY
+            - name : ETHSCAN_APIKEY
               valueFrom:
                 secretKeyRef: 
                   name: {{ .Values.ETHAPIKEYName | quote }}
