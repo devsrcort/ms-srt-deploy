@@ -60,6 +60,12 @@ spec:
                 secretKeyRef: 
                   name: {{ .Values.ALCHEMY_APIKEYName | quote }}
                   key: {{ .Values.ALCHEMY_APIKEYSValue | quote }}
+            
+            - name : ADMINPW
+              valueFrom:
+                secretKeyRef: 
+                  name: {{ .Values.ADMINPWName | quote }}
+                  key: {{ .Values.ADMINPWValue | quote }}
           ports:
             - name: http
               containerPort: 5502

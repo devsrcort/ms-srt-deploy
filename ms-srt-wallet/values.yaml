@@ -22,6 +22,9 @@ ALCHEMY_APIKEYSValue: alchemykeyvalue
 ETHAPIKEYName: ethkeyname
 ETHAPIKEYValue: ethkeyvalue
   
+ADMINPWName: adminpwname
+ADMINPWValue: adminpwvalue
+
 NodeEnvValue: production
 
 imagePullSecrets: []
