@@ -28,6 +28,9 @@ AWSSecretKeyName : awssecretkey
 AWSSecretKey : awssecrectkeyvalue
 
 NodeEnvValue: dev
+  
+ADMINPWName: adminpwname
+ADMINPWValue: adminpwvalue
 
 imagePullSecrets: []
 nameOverride: ""

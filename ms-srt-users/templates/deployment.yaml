@@ -72,6 +72,12 @@ spec:
                 secretKeyRef: 
                   name: {{ .Values.AWSSecretKeyName | quote }}
                   key: {{ .Values.AWSSecretKey | quote }}
+                        
+            - name : ADMINPW
+              valueFrom:
+                secretKeyRef: 
+                  name: {{ .Values.ADMINPWName | quote }}
+                  key: {{ .Values.ADMINPWValue | quote }}
           ports:
             - name: http
               containerPort: 5501
