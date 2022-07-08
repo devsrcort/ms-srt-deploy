@@ -66,6 +66,17 @@ spec:
                 secretKeyRef: 
                   name: {{ .Values.ADMINPWName | quote }}
                   key: {{ .Values.ADMINPWValue | quote }}
+            - name : SECRETKEY
+              valueFrom:
+                secretKeyRef: 
+                  name: {{ .Values.SECRETKEYName | quote }}
+                  key: {{ .Values.SECRETKEYValue | quote }}
+            - name : OPERATOR
+              valueFrom:
+                secretKeyRef: 
+                  name: {{ .Values.OPERATORName | quote }}
+                  key: {{ .Values.OPERATORValue | quote }}
+
           ports:
             - name: http
               containerPort: 5502
