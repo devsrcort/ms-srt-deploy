@@ -27,8 +27,8 @@ ADMINPWValue: adminpwvalue
 
 NodeEnvValue: production
 
-OPERATORName: operatorName
-OPERATORValue : operatorValue
+OPERATORName: operatorname
+OPERATORValue : operatorvalue
 
 SECRETKEYName: secretkeyname
 SECRETKEYValue : secretkeyvalue
