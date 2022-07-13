@@ -32,6 +32,9 @@ NodeEnvValue: dev
 ADMINPWName: adminpwname
 ADMINPWValue: adminpwvalue
 
+SECRETKEYRAWName: secretkerawyname
+SECRETKEYRAWValue : secretkeyrawvalue
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""

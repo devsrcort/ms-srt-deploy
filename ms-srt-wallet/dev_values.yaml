@@ -27,6 +27,18 @@ ADMINPWValue: adminpwvalue
 
 NodeEnvValue: dev
 
+OPERATORName: operatorname
+OPERATORValue : operatorvalue
+
+SECRETKEYName: secretkeyname
+SECRETKEYValue : secretkeyvalue
+
+SECRETKEYRAWName: secretkerawyname
+SECRETKEYRAWValue : secretkeyrawvalue
+
+ADMINPWRAWName : adminkeyname
+ADMINPWRAWValue : adminkeyvalue
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
