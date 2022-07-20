@@ -8,7 +8,7 @@ image:
   repository: devsrcorp/ms-srt-wallet
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "sha-be07cb1"
+  tag: "sha-121cc4d"
 
 MYSQL_HOST: rds.sandbox.srcorp-dev-vpc.com
 MYSQL_USER: srt_client
